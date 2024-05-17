@@ -1,1 +1,16 @@
-import { style } from "./style.css"
+import { style } from "./style.css";
+import battleshipImage from "./assets/images/Screenshot_20240516_202205.png";
+import calculatorImage from "./assets/images/Screenshot_20240516_202112.png";
+import weatherImage from "./assets/images/Screenshot_20240516_202354.png";
+import tictactoeImage from "./assets/images/Screenshot_20240516_202000.png";
+import chessImage from "./assets/images/Screenshot_20240516_201910.png";
+const battleship = document.querySelector(".battleship");
+battleship.src = battleshipImage;
+const calculator = document.querySelector(".calc");
+calculator.src = calculatorImage;
+const chess = document.querySelector(".chess");
+chess.src = chessImage;
+const tictactoe = document.querySelector(".toe");
+tictactoe.src = tictactoeImage;
+const weather = document.querySelector(".weather");
+weather.src = weatherImage;
