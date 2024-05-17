@@ -40,11 +40,11 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .project {
-  flex: 1 1 30%;
+  flex: 1 1 calc(33.333% - 20px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,11 +54,18 @@ main {
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
   box-sizing: border-box;
+  font-size: 2rem;
+  justify-content: space-around;
 }
 
 .projimage {
   max-width: 100%;
   height: auto;
+}
+
+.projectFooter {
+  display: flex;
+  justify-content: center;
 }
 
 .projectFooter img {
@@ -84,4 +91,16 @@ footer {
 .bottomcat {
   max-width: 100%;
   height: auto;
+}
+
+@media (max-width: 1200px) {
+  .project {
+    flex: 1 1 calc(50% - 20px); /* Adjust for medium screens */
+  }
+}
+
+@media (max-width: 800px) {
+  .project {
+    flex: 1 1 100%; /* Adjust for small screens */
+  }
 }
