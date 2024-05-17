@@ -9,31 +9,69 @@ body {
   padding: 0;
   margin: 0;
   min-height: 100vh;
+  position: relative;
 }
 
 header {
+  display: flex;
+  flex: auto;
   grid-row: 1;
-  padding: 1rem;
+  padding: 2rem;
+  justify-content: center;
+  min-height: 50vh;
+  height: auto;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .topSection {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .topSection img {
-  max-width: 30rem;
+  max-width: 50rem;
   height: auto;
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.background {
+  background-color: #22dd69;
+  width: 150vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(5deg) translateY(-200px);
+  z-index: 0;
 }
 
 .about {
   flex: 1;
   margin-left: 1rem;
+  font-size: 3rem;
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  max-width: 50vw;
+  z-index: 1;
+  background-color: white;
+  padding: 1rem;
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   grid-row: 2;
   padding: 1rem;
+  font-size: 4em;
 }
 
 .projects {
@@ -76,31 +114,63 @@ main {
 footer {
   grid-row: 3;
   padding: 1rem;
+  display: flex;
+  background-color: #22dd69;
 }
 
-.contact,
-.socials {
-  margin-bottom: 1rem;
+.contact {
+  font-size: 2.5rem;
+  padding: 30px;
 }
 
 .icon {
   max-width: 50px;
   margin-right: 0.5rem;
+  filter: drop-shadow(5px 5px 5px #222);
+}
+
+footer {
+  display: flex;
+  padding: 40px;
 }
 
 .bottomcat {
   max-width: 100%;
   height: auto;
+  filter: drop-shadow(5px 5px 5px #222);
 }
 
 @media (max-width: 1200px) {
   .project {
     flex: 1 1 calc(50% - 20px); /* Adjust for medium screens */
   }
+  footer {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 800px) {
   .project {
     flex: 1 1 100%; /* Adjust for small screens */
+  }
+
+  header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .topSection {
+    flex-direction: column;
+    width: 100vw;
+    gap: 20px;
+    flex: 1 1 100%;
+  }
+
+  .about {
+    max-width: 90vw;
+  }
+
+  footer {
+    flex-direction: column;
   }
 }
